@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  server:
+    build: ./server
+    container_name: apad-server
+    ports:
+      - "5001:5000"        # host:container
+    env_file:
+      - ./server/.env      
+    volumes:
+      - ./server:/app
+
+  client:
+    build: ./client
+    container_name: apad-client
+    ports:
+      - "3000:80"
+    depends_on:
+      - server
+
