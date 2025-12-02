@@ -3,6 +3,7 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 from pymongo import MongoClient
 from project import Project
+
 import os
 
 # Load environment variables from .env
